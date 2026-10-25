@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+<head>{{ partial "head.html" . }}</head>
+<body>
+  <header>
+    {{ block "header" . }}
+    <h1>Henrique Leal</h1>
+    <p>Senior Software Eng at Red Hat | ex-Microsoft Azure AD</p>
+    <p>
+        <a href="mailto:hm.leal@hotmail.com">Email</a> |
+        <a href="#">RSS</a> |
+        <a href="https://github.com/hmleal/">Github</a> |
+        <a href="https://codeberg.org/hmleal/">Codeberg</a>
+    </p>
+    {{ end }}
+  </header>
+  <main>{{ block "main" . }}{{ end }}</main>
+  <footer>{{ partial "footer.html" . }}</footer>
+  {{- with resources.Get "js/prism.js" }}
+    {{- if eq hugo.Environment "development" }}
+      <script src="{{ .RelPermalink }}"></script>
+    {{- else }}
+      {{- with . | minify | fingerprint }}
+        <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+</body>
+</html>

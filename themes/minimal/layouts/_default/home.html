@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <!--{{ .Content }}-->
+  <h2>Blog Posts</h2>
+    <ul>
+    {{ range site.RegularPages }}<li>{{ .Date.Format "2006 - Jan 2" }} - <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}
+    </ul>
+{{ end }}

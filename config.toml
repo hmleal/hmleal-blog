@@ -1,7 +1,7 @@
 baseURL = "http://hmleal.github.io"
-languageCode = "en-us"
-title = "hmleal"
-theme = "hmleal-theme"
+locale = "en-us"
+title = "Henrique Leal"
+theme = "minimal"
 
 sectionPagesMenu = "main"
 
@@ -9,3 +9,8 @@ googleAnalytics = "UA-58687169-1"
 
 [params]
   description = "Another dev blog written in Hugo"
+
+[markup]
+  [markup.highlight]
+    codeFences = false
+    # style = "" # Disables Chroma inline styles
