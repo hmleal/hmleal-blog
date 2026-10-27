@@ -18,24 +18,24 @@ IRIX, Mac OS X, Solaris, Tru64), e MS Windows.
 
 A instalação é mais simples impossível é necessário apenas o seguinte comando:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 # pacman -S postgresql
-{{< / highlight >}}
+```
 
 Um usuário chamado postgres será criado automáticamente com a instalação.
 Então será necessário especificar a senha do usuário.
 
-{{< highlight sh "linenos=table" >}}
+```bash
 # passwd postgres
-{{< / highlight >}}
+```
 
 Depois disso temos o banco de dados instalado e pronto para uso.
 E como ninguém é de ferro para ficar usando o terminal para efetuar o
 gerenciamento do banco é interessante a instalação da ferramenta pgadmin3.
 
-{{< highlight sh "linenos=table" >}}
+```bash
 # pacman -S pgadmin3
-{{< / highlight >}}
+```
 
 ### Referências
 

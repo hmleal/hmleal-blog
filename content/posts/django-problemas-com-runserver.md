@@ -10,18 +10,18 @@ trabalho aconteceu um pequeno problema com o runserver do django.
 
 Para rodar um projeto utilizando o django precisamos do seguinte comando:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 $ python manage.py runserver
-{{< / highlight >}}
+```
 
 Acontece que parando o servidor utilizando as teclas ```CTRL + C``` as vezes a
 linha do terminal retorna ao normal mas o servidor continua rodando, não me
 perguntem o por que. Para resolver o problema é necessário achar o processo
 através do seguinte comando:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 $ ps aux | grep -i manage.py
-{{< / highlight >}}
+```
 
 ### Entendo o comando PS
 
@@ -33,22 +33,22 @@ consultar o PID de um processo e encerrá-lo.
 Para maiores informações sobre as opções usadas basta consultar a man page do
 comando.
 
-{{< highlight sh "linenos=table" >}}
+```bash
 $ man ps
-{{< / highlight >}}
+```
 
 Como saída do programa você vai ter algo similar a isso:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 henrique  3638  2.8  0.7 168008 47400 pts/3    S+   19:15   0:00 python ./manage.py runserver
-{{< / highlight >}}
+```
 
 Então você precisar selecionar o segundo número da esquerda para direita e
 matar o processo:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 kill -9 3638
-{{< / highlight >}}
+```
 
 Bom pessoal essa foi a solução que eu encontrei para esse problema caso alguem
 tenha alguma contribuição ou crítica só prender o grito ;)

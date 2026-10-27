@@ -20,9 +20,9 @@ Ele possui uma interface rest para que seja fácil integrar com qualquer
 linguagem que você deseje. Com as configurações default fica acessível atráves
 do endereço http://localhost:9200 e você pode enviar comandos via curl.
 
-{{< highlight sh "linenos=table" >}}
+```bash
 curl -X GET http://localhost:9200
-{{< / highlight >}}
+```
 
 Esse comando mostra as configurações básicas do Elasticsearch instalado.
 
@@ -31,15 +31,15 @@ Esse comando mostra as configurações básicas do Elasticsearch instalado.
 O Elasticsearch usa um esquema de indice, tipo e id para gravar um elemento
 novo. Então o formato da url para indexar novos documentos é o seguinte:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 http://hostname:port/index_name/doc_type/doc_id
-{{< / highlight >}}
+```
 
 Exemplo:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 curl -XPOST http://localhost:9000/blog/articles/1 -d '{"content": "Senhor dos anéis."}'
-{{< / highlight >}}
+```
 
 ### Atualizando um documento
 
@@ -47,32 +47,32 @@ Por default o Elasticsearch sobreescreve documentos ao invés de atualiza-los.
 Então para esse trabalho precisamos utilizar a api de update. Cujo formato da
 url é o seguinte:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 http://hostname:port/index_name/doc_type/doc_id/_update
-{{< / highlight >}}
+```
 
 Utilizando essa api precisamos de um pequeno truque que é passar o campo a ser
 atualizado dentro de um json na chave doc.
 
 Exemplo:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 curl -XPUT http://localhost:9200/blog/articles/1 -d '{"doc": {"content": "Senhor dos anéis 2"}}'
-{{< / highlight >}}
+```
 
 ### Deletando documentos
 
 Esse é a parte mais fácil. Seguindo o padrão rest o padrão temos o seguinte:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 http://hostname:port/index_name/doc_type/doc_id
-{{< / highlight >}}
+```
 
 Exemplo:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 curl -XDELETE http://localhost:9200/blog/articles/1
-{{< / highlight >}}
+```
 
 Esse é um início do funcionamento do Elasticsearch se tiverem interesse deixo
 alguns links abaixo para aprofundar seu conhecimento nessa ferramenta.

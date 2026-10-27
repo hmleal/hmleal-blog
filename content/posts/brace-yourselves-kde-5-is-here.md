@@ -26,36 +26,36 @@ o kdebase-workspace antes de efetuar o processo. Para isso é recomendado que
 você inicie o sistema em modo texto para isso na tela de login aperte
 CTRL + ALT + F1. Efetue login e remova os pacotes necessários.
 
-{{< highlight sh "linenos=table" >}}
-# pacman -Rs kdebase-workspace
-{{< / highlight >}}
+```bash
+$ pacman -Rs kdebase-workspace
+```
 
 Depois dessa remoção é só instalar o Plasma 5.2
 
-{{< highlight sh "linenos=table" >}}
-# pacman -S plasma
-{{< / highlight >}}
+```bash
+$ pacman -S plasma
+```
 
 Essa nova versão do Plasma abandonou a recomendação de usar o KDM como manager de inicialização então também é necessário a instalação do SDDM
 
-{{< highlight sh "linenos=table" >}}
+```bash
 # pacman -S sddm
-{{< / highlight >}}
+```
 
 e sua configuração:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 # systemctl disable kdm && systemctl enable sddm
-{{< / highlight >}}
+```
 
 Depois de tudo isso agora é só reiniciar o sistema e cruzar os dedos.
 Infelizmente tive alguns problemas depois do procedimento um deles foi a
 utilização de mais de um monitor e para corrigir isso foi só instalar o
 seguinte pacote:
 
-{{< highlight sh "linenos=table" >}}
+```bash
 # pacman -S kscreen-frameworks
-{{< / highlight >}}
+```
 
 ### Referências
 
